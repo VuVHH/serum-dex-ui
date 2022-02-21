@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import { useWallet } from '../utils/wallet';
 import { listMarket } from '../utils/send';
 import { useMintInput } from '../components/useMintInput';
+import { PublicKey } from '@solana/web3.js';
 
 const { Text, Title } = Typography;
 
@@ -56,7 +57,13 @@ export default function ListNewMarketPage() {
   );
   const [lotSize, setLotSize] = useState('1');
   const [tickSize, setTickSize] = useState('0.01');
-  const dexProgramId = MARKETS.find(({ deprecated }) => !deprecated).programId;
+  // const dexProgramId = MARKETS.find(({ deprecated }) => !deprecated).programId;
+  // console.log(dexProgramId.toString());
+  const dexProgramId = new PublicKey(
+    'gyMoL92YoCT5u2hLLiThV6VYmUXvfjU43zqiFmeDwoc',
+  );
+  // console.log(dexProgramId.toString());
+  // console.log(MARKETS);
   const [submitting, setSubmitting] = useState(false);
 
   const [listedMarket, setListedMarket] = useState(null);

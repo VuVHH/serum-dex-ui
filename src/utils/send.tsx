@@ -350,6 +350,9 @@ export async function placeOrder({
   quoteCurrencyAccount: PublicKey | undefined;
   feeDiscountPubkey: PublicKey | undefined;
 }) {
+  // if(market instanceof Market){
+  //   console.log("!!MARKET",market.programId.toString());
+  // }
   let formattedMinOrderSize =
     market?.minOrderSize?.toFixed(getDecimalCount(market.minOrderSize)) ||
     market?.minOrderSize;

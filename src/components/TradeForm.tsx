@@ -53,6 +53,7 @@ export default function TradeForm({
 }) {
   const [side, setSide] = useState<'buy' | 'sell'>('buy');
   const { baseCurrency, quoteCurrency, market } = useMarket();
+  // console.log(market);
   const baseCurrencyBalances = useSelectedBaseCurrencyBalances();
   const quoteCurrencyBalances = useSelectedQuoteCurrencyBalances();
   const baseCurrencyAccount = useSelectedBaseCurrencyAccount();
